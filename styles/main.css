@@ -61,6 +61,13 @@ ul {
     list-style: none;
 }
 
+/* Layout Utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
 /* Header */
 .header {
     background-color: rgba(12, 12, 14, 0.95);
