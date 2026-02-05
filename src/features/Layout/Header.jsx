@@ -3,6 +3,7 @@ import { DownloadSimple } from '@phosphor-icons/react';
 import { useContentStore } from '../../store/contentStore';
 import Button from '../../ui/Button';
 import styles from './Header.module.css';
+import { trackEvent } from '../../utils/analytics';
 
 const Header = () => {
     const language = useContentStore((state) => state.language);
@@ -11,6 +12,15 @@ const Header = () => {
 
     if (!content) return null;
     const { uiLabels } = content;
+
+    const handleLangSwitch = (lang) => {
+        setLanguage(lang);
+        trackEvent('UX', 'Change Language', lang);
+    };
+
+    const handleCVClick = () => {
+        trackEvent('Engagement', 'Download CV', 'Header Button');
+    };
 
     return (
         <header className={styles.header}>
@@ -26,14 +36,14 @@ const Header = () => {
                     <div className={styles.langSwitch}>
                         <span
                             className={language === 'es' ? styles.activeLang : styles.inactiveLang}
-                            onClick={() => setLanguage('es')}
+                            onClick={() => handleLangSwitch('es')}
                         >
                             ES
                         </span>
                         <span className={styles.divider}>|</span>
                         <span
                             className={language === 'en' ? styles.activeLang : styles.inactiveLang}
-                            onClick={() => setLanguage('en')}
+                            onClick={() => handleLangSwitch('en')}
                         >
                             EN
                         </span>
@@ -44,6 +54,7 @@ const Header = () => {
                         icon={DownloadSimple}
                         href="/cv-pablo-rendon.pdf"
                         download="cv-pablo-rendon.pdf"
+                        onClick={handleCVClick}
                     >
                         {uiLabels.downloadCV}
                     </Button>

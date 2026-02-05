@@ -2,6 +2,7 @@ import { ArrowRight } from '@phosphor-icons/react';
 import { Link } from 'react-router-dom';
 import { useContentStore } from '../store/contentStore';
 import styles from './ProjectCard.module.css';
+import { trackEvent } from '../utils/analytics';
 
 const ProjectCard = ({ project, variant = 'featured' }) => {
     const { id, title, tags, summary, image } = project;
@@ -10,8 +11,16 @@ const ProjectCard = ({ project, variant = 'featured' }) => {
     if (!storeContent) return null;
     const { uiLabels } = storeContent;
 
+    const handleProjectClick = () => {
+        trackEvent('Navigation', 'View Project', title);
+    };
+
     return (
-        <Link to={`/project/${id}`} className={`${styles.card} ${styles[variant]} glass-panel`}>
+        <Link
+            to={`/project/${id}`}
+            className={`${styles.card} ${styles[variant]} glass-panel`}
+            onClick={handleProjectClick}
+        >
             <div className={styles.content}>
                 <div className={styles.tags}>
                     {tags.map((tag, index) => (
