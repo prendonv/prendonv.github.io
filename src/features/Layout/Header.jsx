@@ -52,8 +52,8 @@ const Header = () => {
                     <Button
                         variant="primary"
                         icon={DownloadSimple}
-                        href="/cv-pablo-rendon.pdf"
-                        download="cv-pablo-rendon.pdf"
+                        href="/CV_Pablo_Rendon.pdf"
+                        download="CV_Pablo_Rendon.pdf"
                         onClick={handleCVClick}
                     >
                         {uiLabels.downloadCV}
