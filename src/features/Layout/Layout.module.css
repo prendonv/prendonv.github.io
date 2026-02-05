@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: var(--space-16);
+    /* Space for fixed header */
+    padding-bottom: var(--space-16);
+    width: 100%;
+}

@@ -1,0 +1,17 @@
+/* Bottom Layout - Image below content */
+.visualBreak {
+    margin: var(--space-8) 0 var(--space-20) 0;
+    /* Left align: 0 margin left/right */
+    max-width: 1000px;
+    width: 100%;
+    padding: 0 var(--space-4);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-surface-sunken);
+    display: flex;
+    justify-content: flex-start;
+    /* Internal left align */
+    box-sizing: border-box;
+    align-self: flex-start;
+    /* Just in case */
+}
