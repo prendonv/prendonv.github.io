@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 const esContent = {
   hero: {
-    title: "Portafolio - Pablo Rendón Vásquez",
+    title: "Portafolio Pablo Rendón Vásquez",
     description: [
       "Si estás acá es porque buscas a alguien como yo, con más de 4 años de experiencia en el mundo UX y más de una década en la creación de contenido escrito digital.",
       "Mi metodología de trabajo integra el storytelling con la inteligencia artificial generativa para diseñar interfaces intuitivas.",
@@ -213,7 +213,7 @@ const esContent = {
 
 const enContent = {
   hero: {
-    title: "Portfolio - Pablo Rendón Vásquez",
+    title: "Portfolio Pablo Rendón Vásquez",
     description: [
       "If you're here, it's because you're looking for someone like me, with over 4 years of experience in the UX world and more than a decade in digital written content creation.",
       "My work methodology integrates storytelling with generative artificial intelligence to design intuitive interfaces.",
