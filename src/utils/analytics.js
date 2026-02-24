@@ -10,10 +10,11 @@ export const trackPageView = (path) => {
     ReactGA.send({ hitType: "pageview", page: path });
 };
 
-export const trackEvent = (category, action, label) => {
+export const trackEvent = (category, action, label, value) => {
     ReactGA.event({
         category,
         action,
         label,
+        value
     });
 };

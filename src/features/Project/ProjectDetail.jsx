@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { CaretLeft } from '@phosphor-icons/react';
 import { useContentStore } from '../../store/contentStore';
 import styles from './ProjectDetail.module.css';
+import { trackEvent } from '../../utils/analytics';
 
 const ProjectSection = ({ title, content, highlightFirstParagraph = false }) => {
     if (!content) return null;
@@ -48,13 +49,17 @@ const ProjectDetail = () => {
     const sections = content || {};
     const displayImage = detailImage || image;
 
+    const handleBackClick = () => {
+        trackEvent('Navigation', 'Back to Home', title);
+    };
+
     return (
         <div className={styles.page}>
 
             <header className={styles.header}>
                 <div className="container">
                     <div className={styles.navigation}>
-                        <Link to="/" className={styles.backLink}>
+                        <Link to="/" className={styles.backLink} onClick={handleBackClick}>
                             <CaretLeft size={20} weight="bold" />
                             {uiLabels.backToHome}
                         </Link>
