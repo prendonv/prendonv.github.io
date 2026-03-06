@@ -52,7 +52,7 @@ const Header = () => {
                     <Button
                         variant="primary"
                         icon={DownloadSimple}
-                        href="/CV_Pablo_Rendon.pdf"
+                        href="/CV_Pablo_Rendon.pdf?v=2"
                         download="CV_Pablo_Rendon.pdf"
                         onClick={handleCVClick}
                     >
