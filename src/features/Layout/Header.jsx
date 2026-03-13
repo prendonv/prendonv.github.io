@@ -18,8 +18,10 @@ const Header = () => {
         trackEvent('UX', 'Change Language', lang);
     };
 
+    const cvFile = language === 'en' ? 'CV_Pablo_Rendon_EN.pdf' : 'CV_Pablo_Rendon.pdf';
+
     const handleCVClick = () => {
-        trackEvent('Engagement', 'Download CV', 'Header Button');
+        trackEvent('Engagement', 'Download CV', `Header Button (${language})`);
     };
 
     return (
@@ -52,8 +54,8 @@ const Header = () => {
                     <Button
                         variant="primary"
                         icon={DownloadSimple}
-                        href="/CV_Pablo_Rendon.pdf?v=2"
-                        download="CV_Pablo_Rendon.pdf"
+                        href={`/${cvFile}?v=3`}
+                        download={cvFile}
                         onClick={handleCVClick}
                     >
                         {uiLabels.downloadCV}
